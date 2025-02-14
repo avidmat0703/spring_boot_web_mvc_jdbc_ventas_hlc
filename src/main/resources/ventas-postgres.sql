@@ -38,17 +38,13 @@ INSERT INTO cliente VALUES(7, 'Pilar', 'Ruiz', NULL, 'Sevilla', 300);
 INSERT INTO cliente VALUES(8, 'Pepe', 'Ruiz', 'Santana', 'Huelva', 200);
 INSERT INTO cliente VALUES(9, 'Guillermo', 'López', 'Gómez', 'Granada', 225);
 INSERT INTO cliente VALUES(10, 'Daniel', 'Santana', 'Loyola', 'Sevilla', 125);
-
-INSERT INTO comercial VALUES(1, 'Daniel', 'Sáez', 'Vega', 0.15);
-INSERT INTO comercial VALUES(2, 'Juan', 'Gómez', 'López', 0.13);
-INSERT INTO comercial VALUES(3, 'Diego','Flores', 'Salas', 0.11);
 INSERT INTO comercial VALUES(4, 'Marta','Herrera', 'Gil', 0.14);
 INSERT INTO comercial VALUES(5, 'Antonio','Carretero', 'Ortega', 0.12);
 INSERT INTO comercial VALUES(6, 'Manuel','Domínguez', 'Hernández', 0.13);
 INSERT INTO comercial VALUES(7, 'Antonio','Vega', 'Hernández', 0.11);
 INSERT INTO comercial VALUES(8, 'Alfredo','Ruiz', 'Flores', 0.05);
-
 INSERT INTO pedido VALUES(1, 150.5, '2017-10-05', 5, 2);
+
 INSERT INTO pedido VALUES(2, 270.65, '2016-09-10', 1, 5);
 INSERT INTO pedido VALUES(3, 65.26, '2017-10-05', 2, 1);
 INSERT INTO pedido VALUES(4, 110.5, '2016-08-17', 8, 3);
@@ -64,3 +60,19 @@ INSERT INTO pedido VALUES(13, 545.75, '2019-01-25', 6, 1);
 INSERT INTO pedido VALUES(14, 145.82, '2017-02-02', 6, 1);
 INSERT INTO pedido VALUES(15, 370.85, '2019-03-11', 1, 5);
 INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
+
+INSERT INTO comercial VALUES(1, 'Daniel', 'Sáez', 'Vega', 0.15);
+INSERT INTO comercial VALUES(2, 'Juan', 'Gómez', 'López', 0.13);
+INSERT INTO comercial VALUES(3, 'Diego','Flores', 'Salas', 0.11);
+
+
+SELECT pg_get_serial_sequence('"cliente"', 'id');
+ALTER SEQUENCE public.cliente_id_seq RESTART WITH 100;
+
+
+SELECT pg_get_serial_sequence('"comercial"', 'id');
+ALTER SEQUENCE public.comercial_id_seq RESTART WITH 100;
+
+
+SELECT pg_get_serial_sequence('"pedido"', 'id');
+ALTER SEQUENCE public.pedido_id_seq RESTART WITH 100;
